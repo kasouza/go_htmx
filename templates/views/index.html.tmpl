@@ -1,0 +1,17 @@
+{{ define "index.tmpl" }}
+    {{ template "layouts/header.tmpl" }}
+
+    <h1>{{ .title }}</h1>
+
+    <form hx-post="/clicked" hx-target="#users" hx-swap="outerHTML">
+        <input name="name" value="saske" />
+        <button>
+            Click Me
+        </button>
+
+        <div id="users">
+        </div>
+    </form>
+
+    {{ template "layouts/footer.tmpl" }}
+{{ end }}
